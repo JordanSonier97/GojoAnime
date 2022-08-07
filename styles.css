@@ -264,3 +264,72 @@ form .button input{
     transition: all 0.4s ease;
     background: linear-gradient(135deg, #A63E26, #F25922);
 }
+
+/*contact us*/
+.contact-us{
+  width: 500px;
+  padding: 50px;
+  position: relative;
+  margin: 100px auto;
+  border-radius: 15px;
+  background: #A63E26;
+}
+
+.title h1{
+  color: black;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+}
+
+.form-items .input{
+  width: 100%;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  padding: 15px 40px;
+  background: #fff;
+  border-radius: 8px;
+  border: 2px solid black;
+  border-bottom-width: 3px;
+}
+
+.form-items .input.message{
+  height: 150px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 15px 15px;
+  resize: none;
+}
+
+.form, .form-items{
+    width: 100%;
+  }
+
+.btn{
+  background: grey;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.btn:hover {
+    background: rgb(95, 95, 95);
+}
+
+.btn .fas{
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.form-items{
+  position: relative;
+}
+
+.form-items .fas{
+  color: black;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
