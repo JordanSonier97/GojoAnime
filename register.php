@@ -26,11 +26,11 @@
     </header>
 
     <main>
-        
+
         <?php
 
         $name = $username = $email = $phone = $password = $password2 = "";
-        
+
         $nameErr = $usernameErr = $emailErr = $phoneErr = $passwordErr = $password2Err = "";
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -48,8 +48,16 @@
         if (empty($username)) $usernameErr = "Please enter a valid username";
 
         // check if username is in database
+        require("connect.php");
 
-        if (empty($username)) $usernameErr = "This username has been taken"; 
+        $username = $_POST["username"];
+
+        $result = $mysqli->query("SELECT * FROM customerinfo WHERE customerusername = '$username'");
+
+            if ($username == $results){
+                $usernameErr = "This username has been taken";
+            }
+  
 
         $email = $_POST["email"];
 
@@ -74,7 +82,7 @@
         // check if password should have at least 1 uppercase letter and 1 lowercase letter
 
         if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z]){6,}/', $password)) $passwordErr = "Please enter a valid password";
-        
+
         $password2 = $_POST["password2"];
 
         // check if both password are same
@@ -82,7 +90,7 @@
         if (empty($password2) || $password != $password2) $password2Err = "Both passwords should match";
 
         }
-        
+
     ?>
 
     <h2 class="title">Registration</h2>
